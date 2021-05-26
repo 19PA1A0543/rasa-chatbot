@@ -1,0 +1,246 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - my_school 
+  - my_college
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_submit:
+  - text: "your form is submitted"
+
+
+  utter_ask_roll_number:
+  - text: "nee roll number raayi"
+
+  utter_ask_class:
+  - text: "nuvvu yee class"
+
+  utter_ask_mobile_number:
+  - text: "nee number ivvava"
+
+  utter_ask_hobbies:
+  - text: "nee hobbies cheppu"
+
+  utter_ask_fav_sports:
+  - text: "nee favourite sports yenti"
+
+  utter_ask_fav_food:
+  - text: "nee favourite food yenti"
+
+  utter_ask_fav_shows:
+  - text: "nee favourite shows yenti"
+
+  utter_ask_home_address:
+  - text: "nee enti address cheppava"
+
+  utter_ask_fav_colour:
+  - text: "nee favourite colour pink yee naa"
+
+  utter_ask_name:
+  - text: "what is your name?"
+
+  utter_ask_surname:
+  - text:  "what is your surname?"
+
+  utter_ask_inter_college:
+  - text:  "what is your inter college name?"
+
+  utter_ask_inter_percentage:
+  - text: "what is your inter percentage?"
+  
+  utter_ask_ssc_percentage:
+  - text: "what is your ssc percentage?"
+
+  utter_ask_mains_percentage:
+  - text: "what is your mains percentage?"
+
+  utter_ask_mains_qualified_or_not:
+  - text: "did you qualified in mains?"
+
+  utter_ask_father_name:
+  - text: "what is your father name?"
+
+  utter_ask_mother_name:
+  - text: "what is your mother name?"
+
+  utter_ask_siblings_names:
+  - text: "what is your sidlings names?"
+
+  utter_ask_father_occupation:
+  - text: "what is your father occupation?"
+
+  utter_ask_course_name:
+  - text: "enter the course name you took?"
+
+  utter_ask_which_group:
+  - text: "which group you want to take?"
+
+  utter_ask_blood_group:
+  - text: "what is your blood group?"
+
+  utter_ask_longterm_goals:
+  - text: "what is your longterm goals?"
+
+
+
+  utter_college_slot:
+  - text: "your name is {name}\n your surname is {surname}\n your inter college is {inter_college}\n your inter percentage is {inter_percentage}\n your ssc percentage is {ssc_percentage}\n your mains percentage is {mains_percentage}"
+
+
+  utter_slot:
+  - text: "your name is {name}\n your roll number is {roll_number}"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+entities:
+  - name
+  - roll_number
+  - surname
+  - inter_college
+  - inter_percentage
+  - ssc_percentage
+  - mains_percentage
+  - mains_qualified_or_not
+  - father_name
+  - mother_name
+  - siblings_names
+  - father_occupation
+  - course_name
+  - which_group
+  - blood_group
+  - longterm_goals
+
+
+slots:
+    name:
+      type: text
+    roll_number:
+      type: text
+    class:
+      type: text
+    mobile_number:
+      type: text
+    hobbies:
+      type: text
+    fav_sports:
+      type: text
+    fav_food:
+      type: text
+    fav_shows:
+      type: text
+    home_address:
+      type: text
+    fav_colour:
+      type: text
+    surname:
+      type: text
+    inter_college:
+      type: text
+    inter_percentage:
+      type: text
+    ssc_percentage:
+      type: text
+    mains_percentage:
+      type: text
+    mains_qualified_or_not:
+      type: text
+    father_name:
+      type: text
+    mother_name:
+      type: text
+    siblings_names:
+      type: text
+    father_occupation:
+      type: text
+    course_name:
+      type: text
+    which_group:
+      type: text
+    blood_group:
+      type: text
+    longterm_goals:
+      type: text
+
+
+forms:
+  school_form:
+    name:
+      - type: from_text
+    roll_number:
+      - type: from_text
+    class:
+      - type: from_text
+    mobile_number:
+      - type: from_text
+    hobbies:
+      - type: from_text
+    fav_sports:
+      - type: from_text
+    fav_food:
+      - type: from_text
+    fav_shows:
+      - type: from_text
+    home_address:
+      - type: from_text
+    fav_colour:
+      - type: from_text
+  college_form:
+    name:
+      - type: from_text
+    surname:
+      - type: from_text
+    inter_college:
+      - type: from_text
+    inter_percentage:
+      - type: from_text
+    ssc_percentage:
+      - type: from_text
+    mains_percentage:
+      - type: from_text
+    mains_qualified_or_not:
+      - type: from_text
+    father_name:
+      - type: from_text
+    mother_name:
+      - type: from_text
+    siblings_names:
+      - type: from_text
+    father_occupation:
+      - type: from_text
+    course_name:
+      - type: from_text
+    which_group:
+      - type: from_text
+    blood_group:
+      - type: from_text
+    longterm_goals:
+      - type: from_text

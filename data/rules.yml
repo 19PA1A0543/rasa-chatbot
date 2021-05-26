@@ -1,0 +1,49 @@
+version: "2.0"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: school form
+  steps:
+  - intent: my_school
+  - action: school_form
+  - active_loop: school_form
+
+- rule: submit form
+  condition:
+  - active_loop: school_form
+  steps:
+  - action: school_form
+  - active_loop: null
+  - slot_was_set: 
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_slot
+
+
+
+- rule: college form
+  steps:
+  - intent: my_college
+  - action: college_form
+  - active_loop: college_form
+
+- rule: submit 
+  condition:
+  - active_loop: college_form
+  steps:
+  - action: college_form
+  - active_loop: null
+  - slot_was_set: 
+    - requested_slot: null
+  - action: utter_submit
+  - action: utter_college_slot
